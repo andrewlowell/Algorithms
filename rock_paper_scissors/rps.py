@@ -3,7 +3,9 @@
 import sys
   
 def rock_paper_scissors(n):
-  if n == 1:
+  if n == 0:
+    return [[]]
+  elif n == 1:
     return [['rock'], ['paper'], ['scissors']]
   else:
     computed = rock_paper_scissors(n - 1)
@@ -12,7 +14,7 @@ def rock_paper_scissors(n):
       new_rps.append(play + ['rock'])
       new_rps.append(play + ['paper'])
       new_rps.append(play + ['scissors'])
-    print(len(new_rps))
+    # print(len(new_rps))
   return new_rps
 
 if __name__ == "__main__":
