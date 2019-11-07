@@ -1,10 +1,21 @@
 #!/usr/bin/python
 
 import sys
-
+  
 def rock_paper_scissors(n):
-  pass 
-
+  if n == 0:
+    return [[]]
+  elif n == 1:
+    return [['rock'], ['paper'], ['scissors']]
+  else:
+    computed = rock_paper_scissors(n - 1)
+    new_rps = []
+    for play in computed:
+      new_rps.append(play + ['rock'])
+      new_rps.append(play + ['paper'])
+      new_rps.append(play + ['scissors'])
+    # print(len(new_rps))
+  return new_rps
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
